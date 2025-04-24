@@ -6,11 +6,11 @@
 #    By: mgeorges <mgeorges@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/18 12:00:26 by mgeorges          #+#    #+#              #
-#    Updated: 2025/04/22 13:49:53 by mgeorges         ###   ########.fr        #
+#    Updated: 2025/04/24 21:19:58 by mgeorges         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	Mon_premier_canon
+NAME	=	ex00
 
 C++		=	c++
 
