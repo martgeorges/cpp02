@@ -6,7 +6,7 @@
 /*   By: mgeorges <mgeorges@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 11:02:06 by mgeorges          #+#    #+#             */
-/*   Updated: 2025/04/24 10:35:36 by mgeorges         ###   ########.fr       */
+/*   Updated: 2025/04/25 10:16:53 by mgeorges         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ Fixed::Fixed(int const i_val)
     _value = i_val << _fract_bits_value;
 }
 //constructeur FLOAT
-//décalage vers la gauche pour mettre le float en valeur entier
+//décalage vers la gauche pour convertir le float en un entier
 Fixed::Fixed(float const f_val)
 {
     std::cout << "Float constructor called" << std::endl;
@@ -45,15 +45,15 @@ Fixed::Fixed(const Fixed &copy) {
 }
 //operateur d'assignation
 Fixed& Fixed::operator=(const Fixed &other) {
-    std::cout << "Assignation operator called" << std::endl;
+    std::cout << "Copy assignment operator called" << std::endl;
     if (this != &other)
         this->_value = other.getRawBits();
     return *this;
 }
 
-void Fixed::setRawBits(int const raw) {
+void Fixed::setRawBits(int const unprocessedValue) {
     //std::cout << "setRawBits member function called" << std::endl;
-    _value = raw;
+    _value = unprocessedValue;
 }
 
 int Fixed::getRawBits(void) const {
@@ -69,6 +69,7 @@ int Fixed::toInt( void ) const {
     return (int)(_value >> _fract_bits_value);
 }
 
+//surcharge d'opérateur -> lecture du << a << b etc ..
 std::ostream & operator<<( std::ostream & o, Fixed const & fixed){
     o << fixed.toFloat();
     return (o);

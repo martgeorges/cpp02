@@ -6,7 +6,7 @@
 /*   By: mgeorges <mgeorges@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 13:54:50 by mgeorges          #+#    #+#             */
-/*   Updated: 2025/04/24 21:07:14 by mgeorges         ###   ########.fr       */
+/*   Updated: 2025/04/25 10:17:18 by mgeorges         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ Fixed::Fixed(const Fixed &copy) {
 
 //surcharge de l'opérateur d'affectation
 Fixed& Fixed::operator=(const Fixed &other) {
-    std::cout << "Assignation operator called" << std::endl;
+    std::cout << "Copy assignment operator called" << std::endl;
     if (this != &other)
         this->_value = other.getRawBits();
     return *this;
@@ -44,7 +44,7 @@ int Fixed::getRawBits(void) const {
 }
 
 //fonction d'initialisation de la valeur du nombre
-void Fixed::setRawBits(int const raw) {
+void Fixed::setRawBits(int const unprocessedValue) {
     std::cout << "setRawBits member function called" << std::endl;
-    _value = raw;
+    _value = unprocessedValue;
 }
